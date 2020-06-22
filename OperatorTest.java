@@ -57,17 +57,26 @@ public class OperatorTest {//클래스(속성+기능), 설계도-->추상화
 	public void thirdOper(int a, int b,int c, int d)
 	{
 		System.out.println("조건,비트 논리연산자");
-		boolean state= ++a>1 & b++ ==2 & --c<3 & d--==4;
-		System.out.printf("state=%b,a=%d,b=%d,c=%d,d=%d\n",state,a,b,c,d);
+		boolean state= ++a>1 & b++ ==2 & --c<3 & d--==4; 
+		System.out.printf("&state=%b,a=%d,b=%d,c=%d,d=%d\n",state,a,b,c,d); 
+		//전부 참이기 때문에 참 출력.
+		
 		state= ++a>1 && b++ ==2 && --c<3 && d--==4;
-		System.out.printf("state=%b,a=%d,b=%d,c=%d,d=%d\n",state,a,b,c,d);
+		System.out.printf("&&state=%b,a=%d,b=%d,c=%d,d=%d\n",state,a,b,c,d);
 		//b++ ==2 까지 계산하고 조건에 거짓이기때문에 state에 거짓출력.(and연산에서는 거짓이 하나라도 있으면 결과가 거짓)
 		//따라서 그 이후 연산은 수행하지 않는다.
-		state= ++a>1 | b++ ==2 | --c<3 | d--==4;
-		System.out.printf("state=%b,a=%d,b=%d,c=%d,d=%d\n",state,a,b,c,d);
+		
+		state= ++a>1 & b++ ==2 & --c<3 & d--==4; 
+		System.out.printf("&state=%b,a=%d,b=%d,c=%d,d=%d\n",state,a,b,c,d);
+		// 거짓인 값이 있기때문에 거짓 출력. 연산은 끝까지 함.
+		
+		state= ++a>1 | b++ ==2 | --c<3 | d--==4; 
+		System.out.printf("|state=%b,a=%d,b=%d,c=%d,d=%d\n",state,a,b,c,d);
+		//참인 값이 있기때문에 참 출력. 연산도 끝까지 함.
+		
 		state= ++a>1 || b++ ==2 || --c<3 || d--==4;
-		System.out.printf("state=%b,a=%d,b=%d,c=%d,d=%d\n\n",state,a,b,c,d);
-		//++a>1 까지 계산하고 조건에 참이기 때문에 (or연산에서는 참이 하나라도있으면 결과가 참.) 
+		System.out.printf("||state=%b,a=%d,b=%d,c=%d,d=%d\n\n",state,a,b,c,d);
+		//++a>1 까지 계산하고 조건에 참이기 때문에 state에 참 출력. (or연산에서는 참이 하나라도있으면 결과가 참.) 
 		//따라서 그이후 연산은 수행하지 않는다.
 	}
 	
