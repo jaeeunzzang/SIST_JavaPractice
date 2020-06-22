@@ -1,36 +1,36 @@
 package New.practice;
 
-public class OperatorTest {//Å¬·¡½º(¼Ó¼º+±â´É), ¼³°èµµ-->Ãß»óÈ­
-	// ¿¬»êÀÚ: °è»êÀ» ¸ñÀûÀ¸·Î »ç¿ëµÇ´Â ±âÈ£.
+public class OperatorTest {//í´ë˜ìŠ¤(ì†ì„±+ê¸°ëŠ¥), ì„¤ê³„ë„-->ì¶”ìƒí™”
+	// ì—°ì‚°ì: ê³„ì‚°ì„ ëª©ì ìœ¼ë¡œ ì‚¬ìš©ë˜ëŠ” ê¸°í˜¸.
 
 	/*
-	 * ¿¬»êÀÚÀÇ ¿ì¼±¼øÀ§! 
-	 * ÃÖ¿ì¼±¿¬»êÀÚ : []¹è¿­±âÈ£, ()¿ì¼±¼øÀ§ º¯°æ, . 
-	 * ´ÜÇ×¿¬»êÀÚ: +,-(ºÎÈ£), ~,!(not),++,--
-	 * »ê¼ú¿¬»êÀÚ:*,/,%(³ª¸ÓÁö), +, - 
-	 * shift ¿¬»êÀÚ: >>,<<,>>>(¾ç¼öÈ­) 
-	 * °ü°è(ºñ±³)¿¬»êÀÚ: <,>,<=,>=, ==, !=
-	 * ºñÆ®³í¸®¿¬»êÀÚ: &(and), ^(xor), |(or) 
-	 * Á¶°Ç³í¸®¿¬»êÀÚ:&&,|| 
-	 * »ïÇ× ¿¬»êÀÚ: Á¶°Ç½Ä ? ¸í·É1(Âü) : ¸í·É2(°ÅÁş);
-	 * ´ëÀÔ¿¬»êÀÚ: =,+=,-=,*=,/=,%=,&=,^=,|= 
-	 * ÄŞ¸¶¿¬»êÀÚ: , ¼ø¼­ÀÇ¹Ì
+	 * ì—°ì‚°ìì˜ ìš°ì„ ìˆœìœ„! 
+	 * ìµœìš°ì„ ì—°ì‚°ì : []ë°°ì—´ê¸°í˜¸, ()ìš°ì„ ìˆœìœ„ ë³€ê²½, . 
+	 * ë‹¨í•­ì—°ì‚°ì: +,-(ë¶€í˜¸), ~,!(not),++,--
+	 * ì‚°ìˆ ì—°ì‚°ì:*,/,%(ë‚˜ë¨¸ì§€), +, - 
+	 * shift ì—°ì‚°ì: >>,<<,>>>(ì–‘ìˆ˜í™”) 
+	 * ê´€ê³„(ë¹„êµ)ì—°ì‚°ì: <,>,<=,>=, ==, !=
+	 * ë¹„íŠ¸ë…¼ë¦¬ì—°ì‚°ì: &(and), ^(xor), |(or) 
+	 * ì¡°ê±´ë…¼ë¦¬ì—°ì‚°ì:&&,|| 
+	 * ì‚¼í•­ ì—°ì‚°ì: ì¡°ê±´ì‹ ? ëª…ë ¹1(ì°¸) : ëª…ë ¹2(ê±°ì§“);
+	 * ëŒ€ì…ì—°ì‚°ì: =,+=,-=,*=,/=,%=,&=,^=,|= 
+	 * ì½¤ë§ˆì—°ì‚°ì: , ìˆœì„œì˜ë¯¸
 	 */
 	
 	public void firstOper(int x, int y)
 	{
-		System.out.println("Á¶°Ç³í¸®¿¬»êÀÚ");
-		System.out.printf("x>10 && y<10:%b\n", x > 10 && y < 10); //&&(AND)¿¬»ê : ~~ ÀÌ¸é¼­ ~~
-		System.out.printf("x>10 || y=<10:%b\n\n", x > 10 || y < 10);//||(OR)¿¬»ê: ~~ ÀÌ°Å³ª ~~
+		System.out.println("ì¡°ê±´ë…¼ë¦¬ì—°ì‚°ì");
+		System.out.printf("x>10 && y<10:%b\n", x > 10 && y < 10); //&&(AND)ì—°ì‚° : ~~ ì´ë©´ì„œ ~~
+		System.out.printf("x>10 || y=<10:%b\n\n", x > 10 || y < 10);//||(OR)ì—°ì‚°: ~~ ì´ê±°ë‚˜ ~~
 		
-		System.out.println("»ïÇ×¿¬»êÀÚ");
-		System.out.printf("x>y?x-y:y-x=%d\n", x > y ? x-y : y-x); // x>y(Á¶°Ç½Ä) ? (ÂüÀÏ¶§)xÃâ·Â : (°ÅÁşÀÏ¶§)yÃâ·Â
+		System.out.println("ì‚¼í•­ì—°ì‚°ì");
+		System.out.printf("x>y?x-y:y-x=%d\n", x > y ? x-y : y-x); // x>y(ì¡°ê±´ì‹) ? (ì°¸ì¼ë•Œ)ì‹¤í–‰ : (ê±°ì§“ì¼ë•Œ)yì‹¤í–‰
 		
 		System.out.printf("y<200 ? 200-y :(y==200?y:y-200)=%d\n", y<200 ? 200-y :(y==200?y:y-200)); 
-		//y<200(Á¶°Ç½Ä)? (ÂüÀÏ¶§)200-y Ãâ·Â : ((°ÅÁşÀÏ¶§) y==200(Á¶°Ç½Ä) ? (ÂüÀÏ¶§)y Ãâ·Â : (°ÅÁşÀÏ¶§) y-200Ãâ·Â)
+		//y<200(ì¡°ê±´ì‹)? (ì°¸ì¼ë•Œ)200-y ì‹¤í–‰ : ((ê±°ì§“ì¼ë•Œ) y==200(ì¡°ê±´ì‹) ? (ì°¸ì¼ë•Œ)y ì‹¤í–‰ : (ê±°ì§“ì¼ë•Œ) y-200ì‹¤í–‰)
 		
 		System.out.printf("x<=100?y<200?x:y:x+y=%d\n\n",x<=100?y<200?x:y:x+y);
-		//x<100(Á¶°Ç½Ä1)? y<=200(Á¶°Ç½Ä2) ?(Á¶°Ç½Ä1,2 ÂüÀÏ¶§)xÃâ·Â : (Á¶°Ç½Ä1 Âü,2 °ÅÁşÀÏ¶§)yÃâ·Â : (Á¶°Ç½Ä1,2°ÅÁşÀÏ¶§) x+yÃâ·Â
+		//x<100(ì¡°ê±´ì‹1)? y<=200(ì¡°ê±´ì‹2) ?(ì¡°ê±´ì‹1,2 ì°¸ì¼ë•Œ)xì‹¤í–‰ : (ì¡°ê±´ì‹1 ì°¸,2 ê±°ì§“ì¼ë•Œ)yì‹¤í–‰ : (ì¡°ê±´ì‹1,2ê±°ì§“ì¼ë•Œ) x+yì‹¤í–‰
 		
 	}
 
@@ -39,31 +39,31 @@ public class OperatorTest {//Å¬·¡½º(¼Ó¼º+±â´É), ¼³°èµµ-->Ãß»óÈ­
 		o.firstOper(100, 200);
 		int a = 200, b = 15;
 
-		System.out.println("´ÜÇ×¿¬»êÀÚ");
-		System.out.printf("a++=%d\n", a++); // ½ÇÇà ÈÄ¿¡ a°ª Áõ°¡
+		System.out.println("ë‹¨í•­ì—°ì‚°ì");
+		System.out.printf("a++=%d\n", a++); // ì‹¤í–‰ í›„ì— aê°’ ì¦ê°€
 		System.out.printf("a=%d\n", a);
-		System.out.printf("++a=%d\n", ++a); // ½ÇÇà Àü¿¡ a°ª Áõ°¡
+		System.out.printf("++a=%d\n", ++a); // ì‹¤í–‰ ì „ì— aê°’ ì¦ê°€
 
-		System.out.printf("b--=%d\n", b--); // ½ÇÇà ÈÄ¿¡ b°ª °¨¼Ò
+		System.out.printf("b--=%d\n", b--); // ì‹¤í–‰ í›„ì— bê°’ ê°ì†Œ
 		System.out.printf("b=%d\n", b);
-		System.out.printf("--b=%d\n\n", --b); // ½ÇÇà Àü¿¡ b°ª °¨¼Ò
+		System.out.printf("--b=%d\n\n", --b); // ì‹¤í–‰ ì „ì— bê°’ ê°ì†Œ
 
-		System.out.println("»ê¼ú¿¬»êÀÚ");
+		System.out.println("ì‚°ìˆ ì—°ì‚°ì");
 		System.out.printf("a+b=%d\n", a + b);
 		System.out.printf("a-b=%d\n", a - b);
 		System.out.printf("a*b=%d\n", a * b);
-		System.out.printf("a/b=%f\n", (float)a /(float)b); //½Ç¼öÇü Çüº¯È¯
+		System.out.printf("a/b=%f\n", (float)a /(float)b); //ì‹¤ìˆ˜í˜• í˜•ë³€í™˜
 		System.out.printf("a(mod)b=%d\n\n", a % b);
 
-		System.out.println("ºñ±³¿¬»êÀÚ");
+		System.out.println("ë¹„êµì—°ì‚°ì");
 		System.out.printf("a>b=%b\n", a > b);
 		System.out.printf("a<b=%b\n", a < b);
 		System.out.printf("a==b=%b\n", a == b);
 		System.out.printf("a!=b=%b\n\n", a != b);
 
-		System.out.println("ºñÆ®³í¸®¿¬»êÀÚ");
-		System.out.printf("a&b=%d\n", a & b); // 10Áø¼ö Ãâ·Â
-		System.out.printf("a&b=%s\n", Integer.toBinaryString(a % b)); // 2Áø¼ö Ãâ·Â
+		System.out.println("ë¹„íŠ¸ë…¼ë¦¬ì—°ì‚°ì");
+		System.out.printf("a&b=%d\n", a & b); // 10ì§„ìˆ˜ ì¶œë ¥
+		System.out.printf("a&b=%s\n", Integer.toBinaryString(a % b)); // 2ì§„ìˆ˜ ì¶œë ¥
 		System.out.printf("a^b=%d\n", a ^ b);
 		System.out.printf("a^b=%s\n", Integer.toBinaryString(a ^ b));
 		System.out.printf("a|b=%d\n", a | b);
