@@ -1,43 +1,45 @@
 package New.practice;
 
-public class OperatorTest {//Å¬·¡½º(¼Ó¼º+±â´É), ¼³°èµµ-->Ãß»óÈ­
-	// ¿¬»êÀÚ: °è»êÀ» ¸ñÀûÀ¸·Î »ç¿ëµÇ´Â ±âÈ£.
+import java.util.Scanner;
+
+public class OperatorTest {//í´ë˜ìŠ¤(ì†ì„±+ê¸°ëŠ¥), ì„¤ê³„ë„-->ì¶”ìƒí™”
+	// ì—°ì‚°ì: ê³„ì‚°ì„ ëª©ì ìœ¼ë¡œ ì‚¬ìš©ë˜ëŠ” ê¸°í˜¸.
 
 	/*
-	 * ¿¬»êÀÚÀÇ ¿ì¼±¼øÀ§! 
-	 * ÃÖ¿ì¼±¿¬»êÀÚ : []¹è¿­±âÈ£, ()¿ì¼±¼øÀ§ º¯°æ, .(ÁÖ¼Ò) 
-	 * ´ÜÇ×¿¬»êÀÚ: +,-(ºÎÈ£), ~,!(not),++,--
-	 * »ê¼ú¿¬»êÀÚ:*,/,%(³ª¸ÓÁö), +, - 
-	 * shift ¿¬»êÀÚ: >>,<<,>>>(¾ç¼öÈ­) 
-	 * °ü°è(ºñ±³)¿¬»êÀÚ: <,>,<=,>=, ==, !=
-	 * ºñÆ®³í¸®¿¬»êÀÚ: &(and), ^(xor), |(or) 
-	 * Á¶°Ç³í¸®¿¬»êÀÚ:&&,|| 
-	 * »ïÇ× ¿¬»êÀÚ: Á¶°Ç½Ä ? ¸í·É1(Âü) : ¸í·É2(°ÅÁş);
-	 * ´ëÀÔ¿¬»êÀÚ: =,+=,-=,*=,/=,%=,&=,^=,|= 
-	 * ÄŞ¸¶¿¬»êÀÚ: , ¼ø¼­ÀÇ¹Ì
+	 * ì—°ì‚°ìì˜ ìš°ì„ ìˆœìœ„! 
+	 * ìµœìš°ì„ ì—°ì‚°ì : []ë°°ì—´ê¸°í˜¸, ()ìš°ì„ ìˆœìœ„ ë³€ê²½, .(ì£¼ì†Œ) 
+	 * ë‹¨í•­ì—°ì‚°ì: +,-(ë¶€í˜¸), ~,!(not),++,--
+	 * ì‚°ìˆ ì—°ì‚°ì:*,/,%(ë‚˜ë¨¸ì§€), +, - 
+	 * shift ì—°ì‚°ì: >>,<<,>>>(ì–‘ìˆ˜í™”) 
+	 * ê´€ê³„(ë¹„êµ)ì—°ì‚°ì: <,>,<=,>=, ==, !=
+	 * ë¹„íŠ¸ë…¼ë¦¬ì—°ì‚°ì: &(and), ^(xor), |(or) 
+	 * ì¡°ê±´ë…¼ë¦¬ì—°ì‚°ì:&&,|| 
+	 * ì‚¼í•­ ì—°ì‚°ì: ì¡°ê±´ì‹ ? ëª…ë ¹1(ì°¸) : ëª…ë ¹2(ê±°ì§“);
+	 * ëŒ€ì…ì—°ì‚°ì: =,+=,-=,*=,/=,%=,&=,^=,|= 
+	 * ì½¤ë§ˆì—°ì‚°ì: , ìˆœì„œì˜ë¯¸
 	 */
 	
 	public void firstOper(int x, int y)
 	{
-		System.out.println("Á¶°Ç³í¸®¿¬»êÀÚ");
-		System.out.printf("x>10 && y<10:%b\n", x > 10 && y < 10); //&&(AND)¿¬»ê : ~~ ÀÌ¸é¼­ ~~
-		System.out.printf("x>10 || y=<10:%b\n\n", x > 10 || y < 10);//||(OR)¿¬»ê: ~~ ÀÌ°Å³ª ~~
+		System.out.println("ì¡°ê±´ë…¼ë¦¬ì—°ì‚°ì");
+		System.out.printf("x>10 && y<10:%b\n", x > 10 && y < 10); //&&(AND)ì—°ì‚° : ~~ ì´ë©´ì„œ ~~
+		System.out.printf("x>10 || y=<10:%b\n\n", x > 10 || y < 10);//||(OR)ì—°ì‚°: ~~ ì´ê±°ë‚˜ ~~
 		
-		System.out.println("»ïÇ×¿¬»êÀÚ");
-		System.out.printf("x>y?x-y:y-x=%d\n", x > y ? x-y : y-x); // x>y(Á¶°Ç½Ä) ? (ÂüÀÏ¶§)x½ÇÇà : (°ÅÁşÀÏ¶§)y½ÇÇà
+		System.out.println("ì‚¼í•­ì—°ì‚°ì");
+		System.out.printf("x>y?x-y:y-x=%d\n", x > y ? x-y : y-x); // x>y(ì¡°ê±´ì‹) ? (ì°¸ì¼ë•Œ)xì‹¤í–‰ : (ê±°ì§“ì¼ë•Œ)yì‹¤í–‰
 		
 		System.out.printf("y<200 ? 200-y :(y==200?y:y-200)=%d\n", y<200 ? 200-y :(y==200?y:y-200)); 
-		//y<200(Á¶°Ç½Ä)? (ÂüÀÏ¶§)200-y ½ÇÇà : ((°ÅÁşÀÏ¶§) y==200(Á¶°Ç½Ä) ? (ÂüÀÏ¶§)y ½ÇÇà : (°ÅÁşÀÏ¶§) y-200½ÇÇà)
+		//y<200(ì¡°ê±´ì‹)? (ì°¸ì¼ë•Œ)200-y ì‹¤í–‰ : ((ê±°ì§“ì¼ë•Œ) y==200(ì¡°ê±´ì‹) ? (ì°¸ì¼ë•Œ)y ì‹¤í–‰ : (ê±°ì§“ì¼ë•Œ) y-200ì‹¤í–‰)
 		
 		System.out.printf("x<=100?y<200?x:y:x+y=%d\n\n",x<=100?y<200?x:y:x+y);
-		//x<100(Á¶°Ç½Ä1)? y<=200(Á¶°Ç½Ä2) ?(Á¶°Ç½Ä1,2 ÂüÀÏ¶§)x½ÇÇà : (Á¶°Ç½Ä1 Âü,2 °ÅÁşÀÏ¶§)y½ÇÇà : (Á¶°Ç½Ä1,2°ÅÁşÀÏ¶§) x+y½ÇÇà
+		//x<100(ì¡°ê±´ì‹1)? y<=200(ì¡°ê±´ì‹2) ?(ì¡°ê±´ì‹1,2 ì°¸ì¼ë•Œ)xì‹¤í–‰ : (ì¡°ê±´ì‹1 ì°¸,2 ê±°ì§“ì¼ë•Œ)yì‹¤í–‰ : (ì¡°ê±´ì‹1,2ê±°ì§“ì¼ë•Œ) x+yì‹¤í–‰
 		
 	}
 	public void secondOper(int a, int b)
 	{
-		System.out.println("ºñÆ®³í¸®¿¬»êÀÚ");
-		System.out.printf("a&b=%d\n", a & b); // 10Áø¼ö Ãâ·Â
-		System.out.printf("a&b=%s\n", Integer.toBinaryString(a % b)); // 2Áø¼ö Ãâ·Â
+		System.out.println("ë¹„íŠ¸ë…¼ë¦¬ì—°ì‚°ì");
+		System.out.printf("a&b=%d\n", a & b); // 10ì§„ìˆ˜ ì¶œë ¥
+		System.out.printf("a&b=%s\n", Integer.toBinaryString(a % b)); // 2ì§„ìˆ˜ ì¶œë ¥
 		System.out.printf("a^b=%d\n", a ^ b);
 		System.out.printf("a^b=%s\n", Integer.toBinaryString(a ^ b));
 		System.out.printf("a|b=%d\n", a | b);
@@ -54,45 +56,41 @@ public class OperatorTest {//Å¬·¡½º(¼Ó¼º+±â´É), ¼³°èµµ-->Ãß»óÈ­
 	}
 	public void thirdOper(int a, int b,int c, int d)
 	{
-		System.out.println("Á¶°Ç,ºñÆ® ³í¸®¿¬»êÀÚ");
+		System.out.println("ì¡°ê±´,ë¹„íŠ¸ ë…¼ë¦¬ì—°ì‚°ì");
 		boolean state= ++a>1 & b++ ==2 & --c<3 & d--==4;
 		System.out.printf("state=%b,a=%d,b=%d,c=%d,d=%d\n",state,a,b,c,d);
 		state= ++a>1 && b++ ==2 && --c<3 && d--==4;
 		System.out.printf("state=%b,a=%d,b=%d,c=%d,d=%d\n",state,a,b,c,d);
-		//b++ ==2 ±îÁö °è»êÇÏ°í Á¶°Ç¿¡ °ÅÁşÀÌ±â¶§¹®¿¡ state¿¡ °ÅÁşÃâ·Â.(and¿¬»ê¿¡¼­´Â °ÅÁşÀÌ ÇÏ³ª¶óµµ ÀÖÀ¸¸é °á°ú°¡ °ÅÁş)
-		//µû¶ó¼­ ±× ÀÌÈÄ ¿¬»êÀº ¼öÇàÇÏÁö ¾Ê´Â´Ù.
+		//b++ ==2 ê¹Œì§€ ê³„ì‚°í•˜ê³  ì¡°ê±´ì— ê±°ì§“ì´ê¸°ë•Œë¬¸ì— stateì— ê±°ì§“ì¶œë ¥.(andì—°ì‚°ì—ì„œëŠ” ê±°ì§“ì´ í•˜ë‚˜ë¼ë„ ìˆìœ¼ë©´ ê²°ê³¼ê°€ ê±°ì§“)
+		//ë”°ë¼ì„œ ê·¸ ì´í›„ ì—°ì‚°ì€ ìˆ˜í–‰í•˜ì§€ ì•ŠëŠ”ë‹¤.
 		state= ++a>1 | b++ ==2 | --c<3 | d--==4;
 		System.out.printf("state=%b,a=%d,b=%d,c=%d,d=%d\n",state,a,b,c,d);
 		state= ++a>1 || b++ ==2 || --c<3 || d--==4;
 		System.out.printf("state=%b,a=%d,b=%d,c=%d,d=%d\n\n",state,a,b,c,d);
-		//++a>1 ±îÁö °è»êÇÏ°í Á¶°Ç¿¡ ÂüÀÌ±â ¶§¹®¿¡ (or¿¬»ê¿¡¼­´Â ÂüÀÌ ÇÏ³ª¶óµµÀÖÀ¸¸é °á°ú°¡ Âü.) 
-		//µû¶ó¼­ ±×ÀÌÈÄ ¿¬»êÀº ¼öÇàÇÏÁö ¾Ê´Â´Ù.
+		//++a>1 ê¹Œì§€ ê³„ì‚°í•˜ê³  ì¡°ê±´ì— ì°¸ì´ê¸° ë•Œë¬¸ì— (orì—°ì‚°ì—ì„œëŠ” ì°¸ì´ í•˜ë‚˜ë¼ë„ìˆìœ¼ë©´ ê²°ê³¼ê°€ ì°¸.) 
+		//ë”°ë¼ì„œ ê·¸ì´í›„ ì—°ì‚°ì€ ìˆ˜í–‰í•˜ì§€ ì•ŠëŠ”ë‹¤.
 	}
 	
 	public int abs(int x,int y, int z)
 	{
-		System.out.println("´ÜÇ×¿¬»êÀÚ");
-		System.out.printf("x++=%d\n", x++); // ½ÇÇà ÈÄ¿¡ a°ª Áõ°¡
+		System.out.println("ë‹¨í•­ì—°ì‚°ì");
+		System.out.printf("x++=%d\n", x++); // ì‹¤í–‰ í›„ì— aê°’ ì¦ê°€
 		System.out.printf("x=%d\n", x);
-		System.out.printf("++x=%d\n", ++x); // ½ÇÇà Àü¿¡ a°ª Áõ°¡
+		System.out.printf("++x=%d\n", ++x); // ì‹¤í–‰ ì „ì— aê°’ ì¦ê°€
 		
-		System.out.printf("y--=%d\n", y--); // ½ÇÇà ÈÄ¿¡ b°ª °¨¼Ò
+		System.out.printf("y--=%d\n", y--); // ì‹¤í–‰ í›„ì— bê°’ ê°ì†Œ
 		System.out.printf("y=%d\n", y);
-		System.out.printf("--y=%d\n", --y); // ½ÇÇà Àü¿¡ b°ª °¨¼Ò
-				
-		System.out.printf("z+=--y%d\n",z+=--y+x++); // (--yÇÑ °ª + x°ª) + z. ±×ÈÄ¿¡ x´Â 1Áõ°¡.
+		System.out.printf("--y=%d\n", --y); // ì‹¤í–‰ ì „ì— bê°’ ê°ì†Œ
+		
+		System.out.println(z);		
+		System.out.printf("z= z+ --y+ x++:%d\n",z+=--y+x++); // (--yí•œ ê°’ + xê°’) + z. ê·¸í›„ì— xëŠ” 1ì¦ê°€.
 		
 		return x>(y+z)||x==200? y>z? x-(y+z):x-(z-y):x-(y-z);
 		
 	}
-	public int abs2(int x,int y,int z, int k)
-	{
-		return !(x>y)?(x++ + ++y - --z + k--):(++x + y++ - z-- + --k);
-		// !(x>y)-->(= x<y) ÀÏ¶§, ÂüÀÌ¸é x++, °ÅÁşÀÌ¸é ++x
-	}
 	public void ope()
 	{
-		System.out.println("ÀüÀ§,ÈÄÀ§ Å×½ºÆ®");
+		System.out.println("ë‹¨í•­ ì—°ì‚°ì ì „ìœ„,í›„ìœ„ í…ŒìŠ¤íŠ¸");
 		int x=10,y=5;
 		System.out.println(x+++--y);
 		System.out.println(x++-(--y));
@@ -106,20 +104,30 @@ public class OperatorTest {//Å¬·¡½º(¼Ó¼º+±â´É), ¼³°èµµ-->Ãß»óÈ­
 		System.out.println((--x*y++)+"\n");
 		
 	}
+	public int abs2(int x,int y,int z, int k)
+	{
+		return !(x>y)?(x++ + ++y - --z + k--):(++x + y++ - z-- + --k);
+		// !(x>y)-->(= x<y) ì¼ë•Œ, ì°¸ì´ë©´ x++, ê±°ì§“ì´ë©´ ++x
+	}
 
 	public char oper(int x, int y)
 	{
-		return x==y?'T':'F'; //¸®ÅÏ°ª CharÇü
+		return x==y?'T':'F'; //ë¦¬í„´ê°’ Charí˜•
 	}
 	public boolean oper2(int x,int y)
 	{
-		return x==y; //¸®ÅÏ°ª ³í¸®Çü
+		return x==y; //ë¦¬í„´ê°’ ë…¼ë¦¬í˜•
 	}
 	
 	public static void main(String[] args) {
 		OperatorTest o=new OperatorTest();
-		o.firstOper(100, 199);
-		System.out.println(o.abs(100, 15, -10)+"\n");
+		Scanner sc=new Scanner(System.in);
+		int a = 200, b =105;
+		int x,y;
+		
+		//o.firstOper(x=sc.nextInt(),y=sc.nextInt());
+		o.firstOper(200,100);
+		System.out.println("abs return:"+o.abs(100, 15, -10)+"\n");
 		o.ope();
 		System.out.println("x==y:"+o.oper(10, 20));
 		System.out.println("x==y:"+o.oper2(10, 10)+"\n");
@@ -127,17 +135,16 @@ public class OperatorTest {//Å¬·¡½º(¼Ó¼º+±â´É), ¼³°èµµ-->Ãß»óÈ­
 		System.out.println("result:"+result+"\n");
 		o.secondOper(10, 20);
 		o.thirdOper(1, 2, 3, 4);
-		int a = 200, b =105;
 
 
-		System.out.println("»ê¼ú¿¬»êÀÚ");
+		System.out.println("ì‚°ìˆ ì—°ì‚°ì");
 		System.out.printf("a+b=%d\n", a + b);
 		System.out.printf("a-b=%d\n", a - b);
 		System.out.printf("a*b=%d\n", a * b);
-		System.out.printf("a/b=%f\n", (float)a /(float)b); //½Ç¼öÇü Çüº¯È¯
+		System.out.printf("a/b=%f\n", (float)a /(float)b); //ì‹¤ìˆ˜í˜• í˜•ë³€í™˜
 		System.out.printf("a(mod)b=%d\n\n", a % b);
 
-		System.out.println("ºñ±³¿¬»êÀÚ");
+		System.out.println("ë¹„êµì—°ì‚°ì");
 		System.out.printf("a>b=%b\n", a > b);
 		System.out.printf("a<b=%b\n", a < b);
 		System.out.printf("a==b=%b\n", a == b);
