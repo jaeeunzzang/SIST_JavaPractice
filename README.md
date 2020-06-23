@@ -26,3 +26,10 @@ ConditionalTest: 점수값 입력받아서 평균,학점출력
 & 점수입력받아서 합격,불합격(과락) 출력
 >if elseif, switch-case, 중첩if사용
 ```
+>반복문 사용
+```
+LoopTest: 반복문사용해 구구단, 별찍기
+>while,for,for중첩,조건문사용
+while무한루프, break사용 탈출
+```
+
