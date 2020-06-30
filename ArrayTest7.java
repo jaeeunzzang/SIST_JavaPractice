@@ -1,13 +1,16 @@
-package New.practice;
+package sist.com.array;
+
+import java.util.Scanner;
 
 public class ArrayTest7 {
+	static Scanner sc = new Scanner(System.in);
 	int cnt = 0;
 
 	public boolean isFull(int[] m) {
 		return cnt == m.length;
 	}
 
-	public void add(int[] m, int data) {// ¿À¹ö
+	public void add(int[] m, int data) {// ì˜¤ë²„
 		if (isFull(m)) {
 			System.out.printf("Full:" + data + "\n");
 			return;
@@ -21,18 +24,21 @@ public class ArrayTest7 {
 		add(m, second);
 	}
 
-	public int search(int[] m, int data) { // ¹ŞÀº µ¥ÀÌÅÍ°¡ ÀÖÀ¸¸é ÀÎµ¦½º°ª ¹İÈ¯
+	public int search(int[] m, int data) { // ë°›ì€ ë°ì´í„°ê°€ ìˆìœ¼ë©´ ì¸ë±ìŠ¤ê°’ ë°˜í™˜
 		for (int i = 0; i < m.length; i++) {
 			if (m[i] == data) {
 				System.out.println("search data '" + data + "' in arr[" + i + "]");
 				return i;
 			}
+
 		}
-		return -1; // ¹ŞÀº µ¥ÀÌÅÍ°¡ ¾øÀ¸¸é -1 ¹İÈ¯
+		System.out.println("ì°¾ì„ ë°ì´í„°ê°€ ì—†ìŠµë‹ˆë‹¤.");
+
+		return -1; // ë°›ì€ ë°ì´í„°ê°€ ì—†ìœ¼ë©´ -1 ë°˜í™˜
 	}
 
 	/*
-	 * public int search(int[] m, int data, int fromIndex) { // Áßº¹À¸·Î µ¥ÀÌÅÍÀÖÀ»¶§ Ã£À» ÇÔ¼ö
+	 * public int search(int[] m, int data, int fromIndex) { // ì¤‘ë³µìœ¼ë¡œ ë°ì´í„°ìˆì„ë•Œ ì°¾ì„ í•¨ìˆ˜
 	 * 
 	 * for (int i = fromIndex + 1; i < m.length - 1; i++) { if (m[i] == data) {
 	 * System.out.println("search data in arr[" + i + "]"); return i; } if
@@ -47,7 +53,7 @@ public class ArrayTest7 {
 		System.out.println();
 	}
 
-	public void delete(int[] m, int data, int state) { // state Ãß°¡ÇØ¼­ Áßº¹À¸·Î »èÁ¦ÇÒ°ª ÀÖ´ÂÁö È®ÀÎ.
+	public void delete(int[] m, int data, int state) { // state ì¶”ê°€í•´ì„œ ì¤‘ë³µìœ¼ë¡œ ì‚­ì œí• ê°’ ìˆëŠ”ì§€ í™•ì¸.
 		int index = search(m, data);
 		if (index == -1) {
 			return;
@@ -68,6 +74,17 @@ public class ArrayTest7 {
 
 	}
 
+	public void modify(int[] m, int oridata, int changedata, char state) {
+		int index = search(m, oridata);
+		if (index == -1)
+			return;
+		m[index] = changedata;
+		System.out.println("modify '" + oridata + "' -> '" + changedata + "' ");
+		disp(m);
+		if (state == 'a')
+			modify(m, oridata, changedata, state);
+	}
+
 	public void modify(int[] m, int data, int data2) {
 		System.out.println("modify '" + data + "' -> '" + data2 + "' ");
 		for (int i = 0; i < m.length; i++) {
@@ -78,19 +95,85 @@ public class ArrayTest7 {
 		disp(m);
 	}
 
+	public void menu(int[] m) {
+		while (true) {
+			System.out.println("\nìˆ˜í–‰í•  ì—°ì‚° ");
+			System.out.println("1.Add\n2.Search\n3.Delete\n4.Modify\n5.Display\n6.Quit\n");
+			switch (sc.nextInt()) {
+			case 1:
+				int a, b, state;
+				System.out.print("ë°°ì—´ì— ë„£ì„ ë°ì´í„° ì…ë ¥:");
+				a = sc.nextInt();
+				System.out.println("í•˜ë‚˜ ë” ì…ë ¥?");
+				System.out.println("1.yes\t2.no\n");
+				state = sc.nextInt();
+				if (state == 2) {
+					add(m, a);
+					disp(m);
+				} else {
+					System.out.print("ë°°ì—´ì— ë„£ì„ ë°ì´í„° ì…ë ¥:");
+					b = sc.nextInt();
+					add(m, a, b);
+					disp(m);
+				}
+				continue;
+			case 2:
+				int data;
+				System.out.print("ê²€ìƒ‰í•  ë°ì´í„° ì…ë ¥:");
+				data = sc.nextInt();
+				search(m, data);
+				continue;
+			case 3:
+
+				System.out.print("ì‚­ì œí•  ë°ì´í„° ì…ë ¥:");
+				data = sc.nextInt();
+				delete(m, data, 1);
+				continue;
+			case 4:
+				System.out.print("ìˆ˜ì •í•  ë°ì´í„° ì…ë ¥:");
+				data = sc.nextInt();
+				System.out.print("ìˆ˜ì • í›„ ë°ì´í„° ì…ë ¥:");
+				int change = sc.nextInt();
+				System.out.println("ì „ì²´ ìˆ˜ì •");
+				System.out.println("1.yes\t2.no");
+				state = sc.nextInt();
+				if (state == 1) {
+					char dupl = 'a';
+					modify(m, data, change, dupl);
+				} else
+					modify(m, data, change);
+				continue;
+			case 5:
+				disp(m);
+				continue;
+			case 6:
+				System.out.println("ì¢…ë£Œ");
+				break;
+			default:
+				System.out.println("ì •í™•í•œ ë²ˆí˜¸ ì…ë ¥");
+				continue;
+			}
+			break;
+		}
+	}
+
+	public int[] start() {
+		System.out.println("-------START-------");
+		System.out.print("ë°°ì—´ í¬ê¸° ì…ë ¥:");
+		int arrSize = sc.nextInt();
+		int[] m = new int[arrSize];
+		return m;
+	}
+
+	public void End() {
+		System.out.println("------END------");
+	}
+
 	public static void main(String[] args) {
 		ArrayTest7 at = new ArrayTest7();
-		int[] m = new int[10];
-		at.add(m, 30, 20);
-		at.add(m, 30, 40);
-		at.add(m, 50, 60);
-		at.add(m, 70, 80);
-		at.add(m, 90, 30);
-		at.add(m, 110);
-		at.disp(m);
-		at.search(m, 50);
-		at.delete(m, 30, 1);
-		at.modify(m, 20, 40);
-
+		int[] m = at.start();
+		at.menu(m);
+		at.End();
 	}
+
 }
