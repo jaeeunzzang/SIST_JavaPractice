@@ -59,4 +59,6 @@ ArrayTest2: 로또번호ㅡ ,최대값최소값, 평균, 근사치,빈도수,정
 ```
 ArrayTest7: 1차원 배열이용해 값채우기, 삭제,중복값삭제, 수정
 switch-case로 메뉴만들기, 함수호출
+StackTest: 1차원 배열이용해 스택구현.
+top값, push, pop, peek
 ```
