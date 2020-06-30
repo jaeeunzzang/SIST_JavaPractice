@@ -63,4 +63,6 @@ ArrayTest7: 1차원 배열이용해 값채우기, 삭제,중복값삭제, 수정
 switch-case로 메뉴만들기, 함수호출
 StackTest: 1차원 배열이용해 스택구현.
 top값, push, pop, peek
+CalendarTest: 2차원배열 이용해 달력만들기
+6일차에 했던 윤년,요일구하는 함수 
 ```
