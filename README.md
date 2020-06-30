@@ -34,7 +34,8 @@ while무한루프, break사용 탈출
 ```
 ### 6일차 실습
 >조건문, 반복문, 호출 사용
-```AllTest: 출생년월일 입력받아서 
+```
+AllTest: 출생년월일 입력받아서 
 나이, 띠, 태어난 요일 출력
 for, switch-case, if, 메소드에 인자값받아서 호출 후 리턴값.
 LoopTest2: 반복문,조건문 사용해 별찍기
@@ -43,7 +44,8 @@ LoopTest2: 반복문,조건문 사용해 별찍기
 ```
 ### 7일차 실습
 > 조건문,반복문,호출 사용
-```ScannerSwitchTest: 이름,나이,주소 입력받아서
+```
+ScannerSwitchTest: 이름,나이,주소 입력받아서
 출력, 수정, 종료
 scanner, switch-case
 ```
