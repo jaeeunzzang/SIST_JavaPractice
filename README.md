@@ -85,3 +85,9 @@ Join: private변수, getter,setter,toString...
 JoinMain:배열만들어서 Join클래스 변수 값set, get해서 저장
 비밀번호 확인 .equals 메소드 사용
 ```
+### 7.9 목요일
+> 객체지향
+```
+Login
+Admin
+```
