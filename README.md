@@ -78,3 +78,10 @@ MultiArrayTest2: 2차원배열 이용해 값채우기,삭제,수정
 TimeTest: 클래스, 접근제어, 생성자, 등등등 이용해서
 시간입력, 인자받기 등등등등
 ```
+### 7.8 수요일
+> 객체지향,,,,,,,,,
+```
+Join: private변수, getter,setter,toString...
+JoinMain:배열만들어서 Join클래스 변수 값set, get해서 저장
+비밀번호 확인 .equals 메소드 사용
+```
