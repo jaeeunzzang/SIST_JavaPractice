@@ -91,3 +91,10 @@ JoinMain:배열만들어서 Join클래스 변수 값set, get해서 저장
 Login
 Admin
 ```
+
+### 7.15 수요일
+>객체배열
+```
+JoinMain : delete, search, modify 추가.
+```
+
