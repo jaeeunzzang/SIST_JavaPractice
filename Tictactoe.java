@@ -19,8 +19,23 @@ public class Tictactoe {
 		System.out.println();
 	}
 
-	public boolean tileFull() {
-		if (t.tile != null) {
+	public boolean fullCheck() {
+
+		for (int i = 0; i < t.tile.length; i++) {
+			for (int j = 0; j < t.tile.length; j++) {
+				if (t.tile[i][j] == "0 ") {
+					return false;
+				}
+			}
+		}
+		if (drawCheck() == true)
+			return true;
+
+		return false;
+	}
+
+	public boolean drawCheck() {
+		if (winCheck() == false) {
 			return true;
 		}
 		return false;
@@ -28,81 +43,110 @@ public class Tictactoe {
 
 	public boolean tileCheck(int x, int y) {
 		if (t.tile[x][y] != "0 ") {
-			System.out.println("ÀÌ¹Ì ¼±ÅÃµÈ ÀÚ¸®ÀÔ´Ï´Ù.");
+			System.out.println("ì´ë¯¸ ì„ íƒëœ ìë¦¬ì…ë‹ˆë‹¤.");
 			return true;
 		}
 		return false;
 	}
 
 	public boolean tileIndexCheck(int x, int y) {
-		if (x > t.tile.length && x < 1 || y > t.tile.length && y < 1)
+		if ((x > t.tile.length || x < 1) || (y > t.tile.length || y < 1))
 			return true;
 
 		return false;
+	}
 
+	public void draw() {
+		this.t = new Tile();
+		System.out.println("====================");
+		System.out.println("\n* * * ë¹„ê²¼ìŠµë‹ˆë‹¤ * * *\n");
+		System.out.println("====================");
+		menu();
 	}
 
 	public void player1() {
-		int player1 = 1;
-		System.out.println("Player1's Turn");
-		while (true) {
-			System.out.print("ÁÂÇ¥°ªÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä. ex)11\n>>");
-			String place = sc.next();
-			if (place.length() != 2) {
-				System.out.println("Á¤È®ÇÑ ÁÂÇ¥°ªÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä");
-				continue;
-			}
-			if (place.length() == 2) {
-				this.x = Integer.parseInt(place.substring(0, 1));
-				this.y = Integer.parseInt(place.substring(1));
-				if (tileIndexCheck(x, y) == true) {
-					System.out.println("Àß¸øµÈ ¹üÀ§ÀÔ´Ï´Ù.");
+		try {
+			int player1 = 1;
+			System.out.println("Player1's Turn");
+
+			while (true) {
+				System.out.print("ì¢Œí‘œê°’ì„ ì…ë ¥í•´ì£¼ì„¸ìš”. ex)11\n>>");
+				String place = sc.next();
+				if (place.length() != 2) {
+					System.out.println("ë‘ìë¦¬ì˜ ì¢Œí‘œê°’ì„ ì…ë ¥í•´ì£¼ì„¸ìš”");
 					continue;
 				}
-				if (tileCheck(x, y) == true)
-					continue;
+				if (place.length() == 2) {
+					this.x = Integer.parseInt(place.substring(0, 1));
+					this.y = Integer.parseInt(place.substring(1));
 
-				t.tile[x][y] = "@ ";
-				disp();
+					if (tileCheck(x, y) == true)
+						continue;
+
+					t.tile[x][y] = "@ ";
+					disp();
+					break;
+				}
 				break;
 			}
-			break;
-		}
-		if (winCheck() == true) {
-			win(player1);
-			flag = false;
+			if (winCheck() == true) {
+				this.t = new Tile();
+				win(player1);
+				flag = false;
+
+			}
+			if (fullCheck() == true) {
+				draw();
+			}
+		} catch (NumberFormatException e) {
+			System.out.println("ìˆ«ìë¡œë§Œ ì…ë ¥í•´ì£¼ì„¸ìš”.");
+			player1();
+		} catch (ArrayIndexOutOfBoundsException e) {
+			System.out.println("ì˜ëª»ëœ ë²”ìœ„ì…ë‹ˆë‹¤.");
+			System.out.println("1ì—ì„œ 3ê¹Œì§€ì˜ ì¢Œí‘œë§Œ ì…ë ¥í•´ì£¼ì„¸ìš”.");
+			player1();
 		}
 	}
 
 	public void player2() {
-		int player2 = 2;
-		System.out.println("Player2's Turn");
-		while (true) {
-			System.out.print("ÁÂÇ¥°ªÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä. ex)11\n>>");
-			String place = sc.next();
-			if (place.length() != 2) {
-				System.out.println("Á¤È®ÇÑ ÁÂÇ¥°ªÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä");
-				continue;
-			}
-			if (place.length() == 2) {
-				this.x = Integer.parseInt(place.substring(0, 1));
-				this.y = Integer.parseInt(place.substring(1));
-				if (x > 3 && x < 1 || y > 3 && y < 1) {
-					System.out.println("Àß¸øµÈ ¹üÀ§ÀÔ´Ï´Ù.");
+		try {
+			int player2 = 2;
+			System.out.println("Player2's Turn");
+			while (true) {
+				System.out.print("ì¢Œí‘œê°’ì„ ì…ë ¥í•´ì£¼ì„¸ìš”. ex)11\n>>");
+				String place = sc.next();
+				if (place.length() != 2) {
+					System.out.println("ë‘ìë¦¬ì˜ ì¢Œí‘œê°’ì„ ì…ë ¥í•´ì£¼ì„¸ìš”");
 					continue;
 				}
-				if (tileCheck(x, y) == true)
-					continue;
+				if (place.length() == 2) {
+					this.x = Integer.parseInt(place.substring(0, 1));
+					this.y = Integer.parseInt(place.substring(1));
 
-				t.tile[x][y] = "# ";
-				disp();
+					if (tileCheck(x, y) == true)
+						continue;
+
+					t.tile[x][y] = "# ";
+					disp();
+					break;
+				} // if
 				break;
-			} // if
-			break;
-		} // while
-		if (winCheck() == true) {
-			win(player2);
-			flag = false;
+			} // while
+			if (winCheck() == true) {
+				this.t = new Tile();
+				win(player2);
+				flag = false;
+			}
+			if (fullCheck() == true) {
+				draw();
+			}
+		} catch (NumberFormatException e) {
+			System.out.println("ìˆ«ìë¡œë§Œ ì…ë ¥í•´ì£¼ì„¸ìš”.");
+			player2();
+		} catch (ArrayIndexOutOfBoundsException e) {
+			System.out.println("ì˜ëª»ëœ ë²”ìœ„ì…ë‹ˆë‹¤.");
+			System.out.println("1ì—ì„œ 3ê¹Œì§€ì˜ ì¢Œí‘œë§Œ ì…ë ¥í•´ì£¼ì„¸ìš”.");
+			player2();
 		}
 	}
 
@@ -150,15 +194,19 @@ public class Tictactoe {
 			if (flag == false)
 				break;
 		}
-
 	}
 
 	public void win(int player) {
 		if (player == 1) {
-			System.out.println("*** Player 1 ½Â¸® ***");
+			System.out.println("=======================");
+			System.out.println("\n* * * Player 1 ìŠ¹ë¦¬ * * *\n");
+			System.out.println("=======================");
 			menu();
+
 		} else {
-			System.out.println("*** Player 2 ½Â¸® ***");
+			System.out.println("=======================");
+			System.out.println("\n* * * Player 2 ìŠ¹ë¦¬ * * *\n");
+			System.out.println("=======================");
 			menu();
 		}
 	}
